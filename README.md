@@ -11,7 +11,6 @@
   
   <a href="https://github.com/iblockchains/bitcoin/blob/master/doc/part-1-bitcoin%20network.md">比特币网络</a>
 
-
 # Part 2 RPC
 
 # Part 3 Wallet
