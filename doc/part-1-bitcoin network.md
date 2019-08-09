@@ -1,6 +1,8 @@
-<h1>比特币网络 The Bitcoin Network</h1>
+<p align="center"><h1>比特币网络 The Bitcoin Network</h1></p>
 
-<h3> 1.点对点网络架构 Peer-to-Perr Network Architecture</h3>
+<h2>概念</h2>
+
+<h3> 1.点对点网络架构 Peer-to-Peer Network Architecture</h3>
 
 # 2.节点类型和角色 Node Types and Roles
 
