@@ -19,12 +19,19 @@
 <h3> 3. 扩展的比特币网络 The Extended Bitcoin Network </h3>
 <h5>扩展的比特币网络包含运行在比特币协议上的网络和其它运行在特殊协议上的网络</h5>
 <h5>The extended bitcoin network includes the network running the bitcoin P2P protocol, described earlier, as well as nodes running specialized protocols.</h5>
-
 <img src="https://github.com/iblockchains/bitcoin/blob/master/img/008-Differnt-types-of-nodes-on-the-extended-bitcoin-network.png" alt="Source:Andreas M. Antonopoulos">
 <h3> 4. 比特币中继网络 Bitcoin Relay Networks </h3>
-
+<h5>比特币矿工参与的是工作量证明和扩展区块链，一个对时间特别敏感的竞争。</h5>
+<h5>比特币中继网络是一个试图最小化矿工之间传递区块的延迟的网络，像FIBRE和Falcon</h5>
+<h5>Bitcoin miners are engaged in a time-sensitive competition to solve the Proof-of-Work problem and extend the blockchain</h5>
+<h5>A Bitcoin Relay Network is a network that attempts to minimize the latency in the transmission of blocks between miners, like FIBRE and Falcon</h5>
 <h3> 5. 网络发现 Network Discovery </h3>
-
+<h5>当一个新节点启动时，它需要发现网络中的其它节点才能加入。当建立一个连接时，节点会发发送一个传递版本信息的握手包</h5>
+<h5>版本信息 Version Message:</h5>
+<h5>nVersion: 比特币P2P协议版本 The bitcoin P2P protocol</h5>
+<h5>nLocalServices: 一个本地节点所支持服务的列表 A list of local services supported by the node</h5>
+<h5></h5>
+<h5>When a new node boots up, it must discover other bitcoin nodes on the network in order to participate.Upon establishing a connection, the node will start a "handshake" by transmitting a  version message</h5>
 <h3> 6. 完整节点 Full Nodes </h3>
 
 <h3> 7. 节点间 “库存”交换 Exchanging “Inventory”
