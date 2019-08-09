@@ -20,7 +20,7 @@
 <h5>扩展的比特币网络包含运行在比特币协议上的网络和其它运行在特殊协议上的网络</h5>
 <h5>The extended bitcoin network includes the network running the bitcoin P2P protocol, described earlier, as well as nodes running specialized protocols.</h5>
 
-<img src="https://github.com/iblockchains/bitcoin/blob/master/img/002-Bitcoin%20Core%20architecture.png" alt="Source:Andreas M. Antonopoulos">
+<img src="https://github.com/iblockchains/bitcoin/blob/master/img/008-Differnt-types-of-nodes-on-the-extended-bitcoin-network.png" alt="Source:Andreas M. Antonopoulos">
 <h3> 4. 比特币中继网络 Bitcoin Relay Networks </h3>
 
 <h3> 5. 网络发现 Network Discovery </h3>
