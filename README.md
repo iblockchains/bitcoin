@@ -5,7 +5,7 @@
 
   在完善模块的过程中，采用的设计思路是，农村包围城市，先从比特币的卫星功能入手，从易到难，逐步完善。
 
-https://github.com/iblockchains/bitcoin/blob/master/img/002-Bitcoin%20Core%20architecture.png
+<img src="https://github.com/iblockchains/bitcoin/blob/master/img/002-Bitcoin%20Core%20architecture.png" alt="比特币架构图">
 
 # Part 1 比特币网络
 
