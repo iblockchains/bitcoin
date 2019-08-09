@@ -57,7 +57,10 @@ sage containing its own IP address to its neighbors. The neighbors will, in turn
 <h5>The peer that has the longer blockchain has more blocks than the other node will identify the first 500 blocks to share and transmit their hashes using an inv message.The node missing these blocks will then retrieve them, by issuing a series of getdata message requesting the full block data and identifying the requeted blocks using hashes from the inv message.</h5>
 <h5>Let’s assume, for example, that a node only has the genesis block. It will then receive an  inv message from its peers containing the hashes of the next 500 blocks in the chain. It will start requesting blocks from all of its connected peers, spreading the load and ensuring that it doesn’t overwhelm any peer with requests.The node keeps track of how many blocks are “in transit” per peer connection, meaning blocks that it has requested but not received, checking that it does not exceed a limit ( MAX_BLOCKS_IN_TRANSIT_PER_PEER ).</h5>
 <h3> 8. 简易付款验证节点 Simplified Payment Verification (SPV) Nodes</h3>
-
+<h5>简易付款验证（SPV）允许设备无需储存完整的区块链也能操作。</h5>
+<h5>SPV节点只下载区块的头，这样的区块链只有完整的千分之一</h5>
+<h5>A simplified payment verfication (SPV) method is used to allow devices to operate without storing the full blockchain.</h5>
+<h5>SPV nodes download only the block headers, the resulting chain of blocks is 1000 times smaller then the full blockchain.</h5>
 <h3> 9. Bloom 过滤器 Bloom Filters</h3>
 
 <h3> 10. 加密和验证的连接 Encrypted and Authenticated Connections </h3>

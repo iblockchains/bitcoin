@@ -4,7 +4,7 @@
   <h5>本文旨在循序渐进的搭建一个完整的比特币客户端。 首先，先搭建一个极简易的、架构完整的和基本模块齐全的比特币客户端;然后，在这个基础上，不断完善各个模块;
   <br/>
   在完善模块的过程中，采用的设计思路是，农村包围城市，先从比特币的卫星功能入手，从易到难，逐步完善。</h5>
-
+  <h5>文档中出现的英文出自《Mastering_Bitcoin__Programming_the_Open_Blockchain_2nd》,并根据需要做了精练和节选</h5>
 <img src="https://github.com/iblockchains/bitcoin/blob/master/img/002-Bitcoin%20Core%20architecture.png" alt="比特币架构图">
 
 <h3> Part 1 比特币网络 <h3>
