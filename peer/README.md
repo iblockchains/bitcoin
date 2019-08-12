@@ -8,18 +8,16 @@
 <h5>这个包建立在wire包基础上，为了简化生成完整功能对等结节的流程 wire 包提供了表述 bitcoin wire protocol 的基本的必要原语。</h5>
 <h5>peer包提供的主要功能如下：</h5>
 <ul>
-<li>1. 为处理基于点对点协议的比特币通信提供一个基本的并发安全的节点。</li>
-<li>2. 完整的比特币协议消息读写</li>
-<li></li>
-<li></li>
+<li><h5>1. 为处理基于点对点协议的比特币通信提供一个基本的并发安全的节点。</h5></li>
+<li><h5>2. 完整的比特币协议消息读写</h5></li>
+<li><h5>3. 自动处理包含协议版本沟通的握手流程的启动</h5></li>
+<li><h5>4. 向外的异步消息队列，附带一个可选的已发消息提示通道</h5></li>
 </ul>
-<h5>1. 为处理基于点对点协议的比特币通信提供一个基本的并发安全的节点。</h5>
-<h5>2. 完整的比特币协议消息读写</h5>
-<h5>3. 自动处理包含协议版本沟通的握手流程的启动</h5>
-<h5>4. 向外的异步消息队列，附带一个可选的已发消息提示通道</h5>
 <h5>This package builds upon the wire package, which provides the fundamental primitives necessary to speak the bitcoin wire protocol, in order to simplify the process of creating fully functional peers. </h5>
 <h5>A quick overview of the major features peer provides are as follows:</h5>
-<h5>1. Provides a basic concurrent safe bitcoin peer for handling bitcoin communications via the peer-to-peer protocol.</h5>
-<h5>2. Full duplex reading and writing of bitcoin protocol messages</h5>
-<h5>3. Automatic handling of the initial handshake process including protocol version negotiation</h5>
-<h5>4. Asynchronous message queueing of outbound messages with optional channel for notification when the message is actually sent</h5>
+<ul>
+  <li><h5>1. Provides a basic concurrent safe bitcoin peer for handling bitcoin communications via the peer-to-peer protocol.</h5></li>
+  <li><h5>2. Full duplex reading and writing of bitcoin protocol messages</h5></li>
+  <li><h5>3. Automatic handling of the initial handshake process including protocol version negotiation</h5></li>
+  <li><h5>4. Asynchronous message queueing of outbound messages with optional channel for notification when the message is actually sent</h5></li>
+</ul>
