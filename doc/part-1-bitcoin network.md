@@ -67,14 +67,26 @@ sage containing its own IP address to its neighbors. The neighbors will, in turn
 <h5>To get the block headers, SPV nodes use a  getheaders message.The responding peer will send up to 2,000 block headers using a single  headers message.</h5>
 <h3> 9. Bloom 过滤器 Bloom Filters</h3>
 <h5>Bloom过滤器提供了一种有效的方式来表达搜索模式，同时保护隐私。SPV节点使用它们向对等节点请求匹配特定模式的交易，同时不披露它们查询的具体的地址、密钥或交易</h5>
-<h4>Bloom过滤器工作原理</h4>
+<h4>9.1. Bloom过滤器工作原理</h4>
 <h5>Bloom过滤器的实现是由一个可变长度（N）的二进制数组（N位二进制数构成一个位域）和数量可变（M）的一组哈希函数组成。这些函数为确定性函数，也就是说任何一个使用相同Bloom过滤器的节点通过该函数同样的输入都能得到同一个的结果。Bloom过滤器的准确性和私密性能通过改变长度（N）和哈希函数的数量（M）来调节。</h5>
 <img src="https://github.com/iblockchains/bitcoin/blob/master/img/008-an-exapmle-of-a-simplistic-bloom-filter.png">
 <h5>Bloom filters offer an efficient way to express a search pattern while protecting privacy.They are used by SPV nodes to ask their peers for transactions matching a specific pattern, without revealing exactly which addresses,keys, or transactions they are searching for.</h5>
-<h4>How Bloom Filters Work</h4>
+<h4>9.2. How Bloom Filters Work</h4>
 <h5>Bloom filters are implemented as a variable-size array of N binary digits (a bit field) and a variable number of M hash functions.The hash functions are generated deterministically, so that any node implementing a bloom filter will always use the same hash functions and get the same results for a specific input.By choosing different length (N) bloom filters and a different number (M) of hash functions, the bloom filter can be tuned, varying the level of accuracy and therefore privacy.</h5>
 <h3> 10. 加密和验证的连接 Encrypted and Authenticated Connections </h3>
-<br/>
+<h4>10.1. 点对点认证和加密</h4>
+<h5>两个比特币改进协议（BIP)，<a href="https://github.com/bitcoin/bips/blob/master/bip-0150.mediawiki">BIP-150</a> 和 <a href="https://github.com/bitcoin/bips/blob/master/bip-0151.mediawiki">BIP-151</a>，增加了对比特币P2P网络中P2P认证和加密的支持。BIP-151为支持BIP-151的两个节点之间的所有通信启用协商加密。BIP-150提供了可选的对等认证，允许节点使用ECDSA和私钥对彼此的身份进行认证。</h5>
+<h4>10.2. 交易池</h4>
+<h5>几乎所有比特币网络中的节点，都维护一个未确认交易的临时列表，叫做 memory pool、mempool或transaction pool。节点使用它来跟踪那些网络已知但是还未打包进区块链的交易。</h5>
+<h5>当节点接收并验证交易后，交易会被添加到交易池中，并传递到邻近节点，最后传播到整个网络</h5>
+<h5>一些节点实现还维护一个独立的孤儿交易池。一些交易的输入还未知，这些交易就会被存入孤儿交易池，直到输入确认为止。
+<h4>Peer-to-Peer Authentication and Encryption</h4>
+<h5>Two Bitcoin Improvement Proposals, <a href="https://github.com/bitcoin/bips/blob/master/bip-0150.mediawiki">BIP-150</a> and <a href="https://github.com/bitcoin/bips/blob/master/bip-0151.mediawiki">BIP-151</a>, add support for P2P authentication and encryption in the bitcoin P2P network.BIP-151 enables negotiated encryption for all communications between two nodes that support BIP-151.BIP-150 offers optional peer authentication that allows nodes to authenticate each other’s identity using ECDSA and private keys.</h5>
+<h4>Transaction Pools</h4>
+<h5>Almost every node on the bitcoin network maintains a temporary list of unconfirmed transactions called the memory pool, mempool, or transaction pool.Nodes use this pool to keep track of transactions that are known to the network but are not yet included in the blockchain.</h5>
+<h5>As transactions are received and verified, they are added to the transaction pool and relayed to the neighboring nodes to propagate on the network.</h5>
+<h5>Some node implementations also maintain a separate pool of orphaned transactions.If a transaction’s inputs refer to a transaction that is not yet known, they will be stored temporarily in the orphan pool.</h5>
 
+<br/>
 <h2> 二、编程 Program </h2>
 
