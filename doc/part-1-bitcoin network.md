@@ -58,11 +58,21 @@ sage containing its own IP address to its neighbors. The neighbors will, in turn
 <h5>Let’s assume, for example, that a node only has the genesis block. It will then receive an  inv message from its peers containing the hashes of the next 500 blocks in the chain. It will start requesting blocks from all of its connected peers, spreading the load and ensuring that it doesn’t overwhelm any peer with requests.The node keeps track of how many blocks are “in transit” per peer connection, meaning blocks that it has requested but not received, checking that it does not exceed a limit ( MAX_BLOCKS_IN_TRANSIT_PER_PEER ).</h5>
 <h3> 8. 简易付款验证节点 Simplified Payment Verification (SPV) Nodes</h3>
 <h5>简易付款验证（SPV）允许设备无需储存完整的区块链也能操作。</h5>
-<h5>SPV节点只下载区块的头，这样的区块链只有完整的千分之一</h5>
+<h5>SPV节点只下载区块的头，这样的区块链只有完整的千分之一。</h5>
+<h5>完整的节点会检索所有的区块来生成UTXO（unspent transaction output）数据库。通过确认UTXO是否被使用，来确认交易的有效性。SPV节点则不能验证UTXO是否还未被支付。相反，SPV节点通过Merkle路径，在交易和包含交易的区块之间建立链接，通过检查在其上面的区块将它压在下面的深度来验证交易。</h5>
+<h5>SPV节点通过getheaders消息来获取区块头。响应的节点会通过headers消息发送最多2000个区块的头信息。</h5>
 <h5>A simplified payment verfication (SPV) method is used to allow devices to operate without storing the full blockchain.</h5>
 <h5>SPV nodes download only the block headers, the resulting chain of blocks is 1000 times smaller then the full blockchain.</h5>
+<h5>A full node will go through all blocks and builds a full database of UTXO (unspent transaction output), establishing the validity of the transaction by confirming that the UTXO remains unspent.An SPV node cannot validate whether the UTXO is unspent.Instead, the SPV node will establish a link between the transaction and the block that contains it, using a merkle path, and checks how deep the block is buried by a handful of blocks above it.</h5>
+<h5>To get the block headers, SPV nodes use a  getheaders message.The responding peer will send up to 2,000 block headers using a single  headers message.</h5>
 <h3> 9. Bloom 过滤器 Bloom Filters</h3>
-
+<h5>Bloom过滤器提供了一种有效的方式来表达搜索模式，同时保护隐私。SPV节点使用它们向对等节点请求匹配特定模式的交易，同时不披露它们查询的具体的地址、密钥或交易</h5>
+<h4>Bloom过滤器工作原理</h4>
+<h5>Bloom过滤器的实现是由一个可变长度（N）的二进制数组（N位二进制数构成一个位域）和数量可变（M）的一组哈希函数组成。这些函数为确定性函数，也就是说任何一个使用相同Bloom过滤器的节点通过该函数同样的输入都能得到同一个的结果。Bloom过滤器的准确性和私密性能通过改变长度（N）和哈希函数的数量（M）来调节。</h5>
+<img src="https://github.com/iblockchains/bitcoin/blob/master/img/008-an-exapmle-of-a-simplistic-bloom-filter.png">
+<h5>Bloom filters offer an efficient way to express a search pattern while protecting privacy.They are used by SPV nodes to ask their peers for transactions matching a specific pattern, without revealing exactly which addresses,keys, or transactions they are searching for.</h5>
+<h4>How Bloom Filters Work</h4>
+<h5>Bloom filters are implemented as a variable-size array of N binary digits (a bit field) and a variable number of M hash functions.The hash functions are generated deterministically, so that any node implementing a bloom filter will always use the same hash functions and get the same results for a specific input.By choosing different length (N) bloom filters and a different number (M) of hash functions, the bloom filter can be tuned, varying the level of accuracy and therefore privacy.</h5>
 <h3> 10. 加密和验证的连接 Encrypted and Authenticated Connections </h3>
 <br/>
 
