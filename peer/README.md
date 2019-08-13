@@ -47,7 +47,7 @@
   <li><h5>2. Full duplex reading and writing of bitcoin protocol messages</h5></li>
   <li><h5>3. Automatic handling of the initial handshake process including protocol version negotiation</h5></li>
   <li><h5>4. Asynchronous message queueing of outbound messages with optional channel for notification when the message is actually sent</h5></li>
-  <li><h5>弹性化节点设置:</h5>
+  <li><h5>Flexible peer configuration:</h5>
   <ul>
     <li><h5>Caller is responsible for creating outgoing connections and listening for incoming connections so they have flexibility to establish connections as they see fit (proxies, etc)</h5></li>
     <li><h5>User agent name and version</h5></li>
