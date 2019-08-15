@@ -2,14 +2,12 @@
 
 * [1.基本概念 Basic Concept](#1)
 
-* [1.1点对点网络架构 Peer-to-Peer Network Architecture](#11)
-
 * [2.编程 Program](#2)
 
 
 <h2 id="1">一、基本概念 Basic Concept</h2>
 
-<h3 id="11"> 1.1点对点网络架构 Peer-to-Peer Network Architecture</h3>
+<h3 id="1.1"> 1.1点对点网络架构 Peer-to-Peer Network Architecture</h3>
 <h5>比特币是在互联网上构建的点对点网络架构.网络中没有服务器、没有集中式服务和层次结构.P2P网络互惠性是节点参与的激励因素,节点提供服务的同时也消费服务.P2P网络有天生的弹性、去中心和开放的特点.</h5>
 <h5>Bitcoin is structured as a peer-to-peer network architecture on top of the internet.There is no server, no centralized service, and no hierarchy within the network.Nodes in a P2P network both provide and consume services at the same time with reciprocity acting as the incentive for participation.P2P networks are inherently resilient, decentralized, and open</h5>
 
@@ -98,19 +96,23 @@ sage containing its own IP address to its neighbors. The neighbors will, in turn
 <h2 id="2"> 二、编程 Program </h2>
 <h3>搭建基本的启动框架</h3>
 
-* [主函数](#2.1)
+* [主函数 btcd](#2.1)
 
-* [日志](#2.2)
+* [日志 log](#2.2)
 
-* [配置](#2.3)
+* [配置 config](#2.3)
 
-2.日志 log.go
-3.打断信号
-4.打印版本
-5.版本升级
-6.程序关闭控制
-6.数据库
-7.创建服务器和启动服务
+* [信号 signal](#2.4)
+
+* [升级 upgrade](#2.5)
+
+* [服务器 server](#2.6)
+
+* [版本信息 version](#2.7)
+
+* [参数](#2.8)
+
+
 <h4 id="2.1">主函数</h4>
 <h5>新建btcd.go文件:</h5>
 
@@ -439,7 +441,7 @@ func loadConfig() (*config, []string, error) {
 }
 ```
 
-<h4>信号</h4>
+<h4 id="2.4">信号</h4>
 <h5>新建signal.go</h5>
 
 ```
@@ -478,7 +480,7 @@ func interruptRequested(interrupted <-chan struct{}) bool {
 }
 ```
 
-<h4>升级</h4>
+<h4 id="2.5">升级</h4>
 <h5>新建 upgrade.go</h5>
 
 ```
@@ -493,7 +495,7 @@ func doUpgrades() error {
 }
 ```
 
-<h4>服务器</h4>
+<h4 id="2.6">服务器</h4>
 <h5>新建 server.go</h5>
 
 ```
@@ -548,7 +550,7 @@ func (s *server) WaitForShutdown() {
 
 ```
 
-<h4>版本信息</h4>
+<h4 id="2.7">版本信息</h4>
 <h5>新建 version.go</h5>
 
 ```
@@ -562,7 +564,7 @@ func version() string {
 }
 ```
 
-<h4>app参数</h4>
+<h4 id="2.8">app参数</h4>
 <h5>新建params.go</h5>
 
 ```
