@@ -90,16 +90,8 @@ sage containing its own IP address to its neighbors. The neighbors will, in turn
 <br/>
 <h2> 二、编程 Program </h2>
 <h3>搭建基本的启动框架</h3>
-<h5>
-  <ul>
-    <li><h5><a href="#配置">配置</a></h5></li>
-    <li><h5><span id="jump">Hello World</span></h5></li>
-    <li><h5></h5></li>
-    <li><h5></h5></li>
-    <li><h5></h5></li>
-  </ul>
-</h5>
-
+* [1.日志] (#1)
+* [2.配置] (#2)
 2.日志 log.go
 3.打断信号
 4.打印版本
@@ -364,8 +356,8 @@ func initLogRotator(logFile string) {
 	logRotator = r
 }
 ```
-[XXXX](#jump)
-<h4>配置</h4>
+
+<h4 id="2">2.配置</h4>
 <h5>通过go get 拉取github.com/btcsuite/btcutil</h5>
 <h5>新建config.go文件:</h5>
 
