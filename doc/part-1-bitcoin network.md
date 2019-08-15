@@ -104,7 +104,8 @@ btcdMain btcd.go
 
 <h4>第一步,初始化日志</h4>
 <h5>在根目录新建 log.go:</h5>
-<h5>package main
+```
+package main
 
 import (
 	"fmt"
@@ -115,7 +116,8 @@ import (
 	"github.com/jrick/logrotate/rotator"
 )
 
-// logWriter implements an io.Writer that outputs to both standard output and
+// logWriter 实现了io.Writer接口可以同时将日志打印到控制台和输出到log rotator
+// implements an io.Writer that outputs to both standard output and
 // the write-end pipe of an initialized log rotator.
 type logWriter struct{}
 
@@ -165,6 +167,7 @@ func initLogRotator(logFile string) {
 	}
 
 	logRotator = r
-}</h5>
+}
+```
 
 
