@@ -104,6 +104,8 @@ btcdMain btcd.go
 
 <h4>第一步,初始化日志</h4>
 <h5>在根目录新建 log.go:</h5>
+
+
 ```package main
 
 import (
@@ -167,5 +169,3 @@ func initLogRotator(logFile string) {
 
 	logRotator = r
 }```
-
-
