@@ -55,7 +55,7 @@ func loadConfig() (*config, []string, error) {
 	cfg := config{
 		LogDir: defaultLogDir,
 	}
-	fmt.Println("待:loadConfig")
+	fmt.Println("Unfinished:loadConfig")
 	// Initialize log rotation.  After log rotation has been initialized, the
 	// logger variables may be used.
 	initLogRotator(filepath.Join(cfg.LogDir, defaultLogFilename))

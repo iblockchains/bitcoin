@@ -22,27 +22,27 @@ type server struct {
 func newServer(listenAddrs, agentBlacklist, agentWhitelist []string,
 	db database.DB, chainParams *chaincfg.Params,
 	interrupt <-chan struct{}) (*server, error) {
-	fmt.Println("待:newServer")
+	fmt.Println("Unfinished:newServer")
 	return nil, nil
 }
 
 // Start 启动服务
 // begins accepting connections from peers.
 func (s *server) Start() {
-	fmt.Println("待:server.Start")
+	fmt.Println("Unfinished:server.Start")
 }
 
 // Stop 通过暂停所有同其它节点的连接和主接听器优雅的关闭服务器
 // gracefully shuts down the server by stopping and disconnecting all
 // peers and the main listener.
 func (s *server) Stop() error {
-	fmt.Println("待:server.Stop")
+	fmt.Println("Unfinished:server.Stop")
 	return nil
 }
 
 // WaitForShutdown 阻塞直到主监听器和节点的处理程序都停止.
 // blocks until the main listener and peer handlers are stopped.
 func (s *server) WaitForShutdown() {
-	fmt.Println("待:WaitForShutdown")
+	fmt.Println("Unfinished:WaitForShutdown")
 	// s.wg.Wait()
 }

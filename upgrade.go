@@ -4,6 +4,6 @@ import "fmt"
 
 // doUpgrades performs upgrades to btcd as new versions require it.
 func doUpgrades() error {
-	fmt.Println("待:doUpgrades")
+	fmt.Println("Unfinished:doUpgrades")
 	return nil
 }

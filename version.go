@@ -3,6 +3,6 @@ package main
 import "fmt"
 
 func version() string {
-	fmt.Println("待:version")
+	fmt.Println("Unfinished:version")
 	return "version"
 }

@@ -64,11 +64,11 @@ func btcdMain(serverChan chan<- *server) error {
 	// 根据需要启动http分析服务器
 	// Enable http profiling server if requested.
 	if cfg.Profile != "" {
-		fmt.Println("待完善:Enable http profiling server")
+		fmt.Println("Unfinished:Enable http profiling server")
 	}
 	// Write cpu profile if requested.
 	if cfg.CPUProfile != "" {
-		fmt.Println("待完善:Write cpu profile if requested")
+		fmt.Println("Unfinished:Write cpu profile if requested")
 	}
 	// 版本升级
 	// Perform upgrades to btcd as new versions require it
@@ -88,7 +88,7 @@ func btcdMain(serverChan chan<- *server) error {
 		return err
 	}
 	defer func() {
-		btcdLog.Infof("待: Gracefully shutting down the database...")
+		btcdLog.Infof("Unfinished: Gracefully shutting down the database...")
 		if db != nil {
 			db.Close()
 		}
@@ -101,15 +101,15 @@ func btcdMain(serverChan chan<- *server) error {
 	// NOTE: The order is important here because dropping the tx index also
 	// drops the address index since it relies on it.
 	if cfg.DropAddrIndex { // 丢弃地址索引
-		fmt.Println("待:DropAddrIndex")
+		fmt.Println("Unfinished:DropAddrIndex")
 		return nil
 	}
 	if cfg.DropTxIndex {
-		fmt.Println("待:DropTxIndex")
+		fmt.Println("Unfinished:DropTxIndex")
 		return nil
 	}
 	if cfg.DropCfIndex {
-		fmt.Println("待:DropCfIndex")
+		fmt.Println("Unfinished:DropCfIndex")
 		return nil
 	}
 	// 新建服务器并启动
@@ -174,6 +174,6 @@ func main() {
 	}
 }
 func loadBlockDB() (database.DB, error) {
-	fmt.Println("待:loadBlockDB")
+	fmt.Println("Unfinished:loadBlockDB")
 	return nil, nil
 }

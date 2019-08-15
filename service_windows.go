@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func serviceMain() (bool, error) {
-	fmt.Println("待:serviceMain")
+	fmt.Println("Unfinished:serviceMain")
 	return false, nil
 }
 func init() {

@@ -14,6 +14,7 @@ import (
 // the write-end pipe of an initialized log rotator.
 type logWriter struct{}
 
+// Write logWriter引用io.Writer接口的具体实现
 func (logWriter) Write(p []byte) (n int, err error) {
 	os.Stdout.Write(p)
 	logRotator.Write(p)

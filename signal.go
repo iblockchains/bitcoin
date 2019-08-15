@@ -13,7 +13,7 @@ var shutdownRequestChannel = make(chan struct{})
 // requests from shutdownRequestChannel.  It returns a channel that is closed
 // when either signal is received.
 func interruptListener() <-chan struct{} {
-	fmt.Println("待:interruptListener")
+	fmt.Println("Unfinished:interruptListener")
 	c := make(chan struct{})
 	return c
 }
@@ -28,6 +28,6 @@ func interruptRequested(interrupted <-chan struct{}) bool {
 	// 	return true
 	// default:
 	// }
-	fmt.Println("待:interruptRequested")
+	fmt.Println("Unfinished:interruptRequested")
 	return false
 }
