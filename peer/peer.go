@@ -2,7 +2,9 @@ package peer
 
 import (
 	"fmt"
+	"math/rand"
 	"net"
+	"time"
 
 	"github.com/iblockchains/bitcoin/wire"
 )
@@ -31,6 +33,7 @@ type Config struct {
 // net.Addr interface and create a bitcoin NetAddress structure using that
 // information.
 func newNetAddress(addr net.Addr, services wire.ServiceFlag) (*wire.NetAddress, error) {
+	return nil, nil
 }
 func minUint32(a, b uint32) uint32 {
 	if a < b {
@@ -360,4 +363,76 @@ func (p *Peer) QueueMessage(msg wire.Message, doneChan chan<- struct{}) {
 func (p *Peer) QueueMessageWithEncoding(msg wire.Message, doneChan chan<- struct{},
 	encoding wire.MessageEncoding) {
 	fmt.Println("QueueMessageWithEncoding")
+}
+
+// QueueInventory 添加传递的 inventory 到 inventory 队列.
+// adds the passed inventory to the inventory send queue which
+// might not be sent right away, rather it is trickled to the peer in batches.
+// Inventory that the peer is already known to have is ignored.
+//
+// This function is safe for concurrent access.
+func (p *Peer) QueueInventory(inVect *wire.InvVect) {
+	fmt.Println("QueueInventory")
+}
+
+// readRemoteVersionMsg 等待从远程节点传递的下一条消息.
+// 如果下一条消息不是版本消息或者版本不兼容则返回一个错误.
+// waits for the next message to arrive from the remote
+// peer.  If the next message is not a version message or the version is not
+// acceptable then return an error.
+func (p *Peer) readRemoteVersionMsg() error {
+	fmt.Println("readRemoteVersionMsg")
+	return nil
+}
+
+// localVersionMsg 新建一个可以发送给远程节点的版本消息
+// creates a version message that can be used to send to the remote peer.
+func (p *Peer) localVersionMsg() (*wire.MsgVersion, error) {
+	fmt.Println("localVersionMsg")
+	return nil, nil
+}
+
+// writeLocalVersionMsg 将版本消息写入远程节点
+// writes our version message to the remote peer.
+func (p *Peer) writeLocalVersionMsg() error {
+	fmt.Println("writeLocalVersionMsg")
+	return nil
+}
+
+// start 开始处理传入和传出的消息
+func (p *Peer) start() error {
+	fmt.Println("start")
+	return nil
+}
+
+// AssociateConnection 关联指定连接.如果已经连接则函数无效.
+// associates the given conn to the peer.   Calling this
+// function when the peer is already connected will have no effect.
+func (p *Peer) AssociateConnection(conn net.Conn) {
+	fmt.Println("AssociateConnection")
+}
+
+// newPeerBase 基于入站标志返回一个新的比特币根节点.
+// returns a new base bitcoin peer based on the inbound flag.  This
+// is used by the NewInboundPeer and NewOutboundPeer functions to perform base
+// setup needed by both types of peers.
+func newPeerBase(origCfg *Config, inbound bool) *Peer {
+	fmt.Println("newPeerBase")
+	return nil
+}
+
+// NewInboundPeer returns a new inbound bitcoin peer. Use Start to begin
+// processing incoming and outgoing messages.
+func NewInboundPeer(cfg *Config) *Peer {
+	return newPeerBase(cfg, true)
+}
+
+// NewOutboundPeer returns a new outbound bitcoin peer.
+func NewOutboundPeer(cfg *Config, addr string) (*Peer, error) {
+	fmt.Println("NewOutboundPeer")
+	return nil, nil
+}
+func init() {
+	fmt.Println("----------peer init----------------")
+	rand.Seed(time.Now().UnixNano()) // 随机数发生器初始化为确定性状态,种子不同每次生成的随机数就不同
 }
