@@ -1,12 +1,19 @@
 <p align="center"><h1>第一章 比特币网络 The Bitcoin Network</h1></p>
 
-<h2>一、基本概念 Basic Concept</h2>
+* [1.基本概念 Basic Concept](#1)
 
-<h3> 1.点对点网络架构 Peer-to-Peer Network Architecture</h3>
+* [1.1点对点网络架构 Peer-to-Peer Network Architecture](#11)
+
+* [2.编程 Program](#2)
+
+
+<h2 id="1">一、基本概念 Basic Concept</h2>
+
+<h3 id="11"> 1.1点对点网络架构 Peer-to-Peer Network Architecture</h3>
 <h5>比特币是在互联网上构建的点对点网络架构.网络中没有服务器、没有集中式服务和层次结构.P2P网络互惠性是节点参与的激励因素,节点提供服务的同时也消费服务.P2P网络有天生的弹性、去中心和开放的特点.</h5>
 <h5>Bitcoin is structured as a peer-to-peer network architecture on top of the internet.There is no server, no centralized service, and no hierarchy within the network.Nodes in a P2P network both provide and consume services at the same time with reciprocity acting as the incentive for participation.P2P networks are inherently resilient, decentralized, and open</h5>
 
-<h3> 2.节点类型和角色 Node Types and Roles </h3>
+<h3> 1.2节点类型和角色 Node Types and Roles </h3>
 <h5>一个比特币节点是：路由、区块链数据库、采矿和钱包服务的功能集合.所有的节点为都有路由、验证和传播交易和区块链和发现节点及保持节点之前的连接。</h5>
 <h5>完整的节点，具有所有功能，可以自主和权威验证所有的交易等</h5>
 <h5>简易交易验证(spv)节点或轻量级节点，只保存区块链的一个子集，并通过SPV方法验证交易</h5>
@@ -16,11 +23,11 @@
 <h5>SPV nodes or lightweight nodes maintian only a subset of the blockchain and verify transactions using a method called simplified payment verification, or SPV.</h5>
 <h5>Mining nodes compete to create new blocks by running specialized hardware to solve the Proof-of-Work algorithm</h5>
 
-<h3> 3. 扩展的比特币网络 The Extended Bitcoin Network </h3>
+<h3> 1.3. 扩展的比特币网络 The Extended Bitcoin Network </h3>
 <h5>扩展的比特币网络包含运行在比特币协议上的网络和其它运行在特殊协议上的网络</h5>
 <h5>The extended bitcoin network includes the network running the bitcoin P2P protocol, described earlier, as well as nodes running specialized protocols.</h5>
 <img src="https://github.com/iblockchains/bitcoin/blob/master/img/008-Differnt-types-of-nodes-on-the-extended-bitcoin-network.png" alt="Source:Andreas M. Antonopoulos">
-<h3> 4. 比特币中继网络 Bitcoin Relay Networks </h3>
+<h3> 1.4 比特币中继网络 Bitcoin Relay Networks </h3>
 <h5>比特币矿工参与的是工作量证明和扩展区块链，一个对时间特别敏感的竞争。</h5>
 <h5>比特币中继网络是一个试图最小化矿工之间传递区块的延迟的网络，像FIBRE和Falcon</h5>
 <h5>Bitcoin miners are engaged in a time-sensitive competition to solve the Proof-of-Work problem and extend the blockchain</h5>
@@ -88,10 +95,15 @@ sage containing its own IP address to its neighbors. The neighbors will, in turn
 <h5>Some node implementations also maintain a separate pool of orphaned transactions.If a transaction’s inputs refer to a transaction that is not yet known, they will be stored temporarily in the orphan pool.</h5>
 
 <br/>
-<h2> 二、编程 Program </h2>
+<h2 id="2"> 二、编程 Program </h2>
 <h3>搭建基本的启动框架</h3>
-* [1.日志] (#1)
-* [2.配置] (#2)
+
+* [主函数](#2.1)
+
+* [日志](#2.2)
+
+* [配置](#2.3)
+
 2.日志 log.go
 3.打断信号
 4.打印版本
@@ -99,7 +111,7 @@ sage containing its own IP address to its neighbors. The neighbors will, in turn
 6.程序关闭控制
 6.数据库
 7.创建服务器和启动服务
-<h4>主函数</h4>
+<h4 id="2.1">主函数</h4>
 <h5>新建btcd.go文件:</h5>
 
 ```
@@ -285,7 +297,7 @@ func loadBlockDB() (database.DB, error) {
 
 ```
 
-<h4>初始化日志</h4>
+<h4 id="2.2">日志</h4>
 <h5>日志在整个客户端的各个角落随处可见,先将它的基本框架和必要功能先写上.</h5>
 <h5>在根目录新建 log.go:</h5>
 <h5>首先,需要使用go get拉取两个包github.com/btcsuite/btclog和github.com/jrick/logrotate/rotator</h5>
@@ -357,7 +369,7 @@ func initLogRotator(logFile string) {
 }
 ```
 
-<h4 id="2">2.配置</h4>
+<h4 id="2.3">配置</h4>
 <h5>通过go get 拉取github.com/btcsuite/btcutil</h5>
 <h5>新建config.go文件:</h5>
 
