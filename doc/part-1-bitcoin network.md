@@ -365,7 +365,7 @@ func initLogRotator(logFile string) {
 }
 ```
 
-<h4>#配置</h4>
+# 配置
 <h5>通过go get 拉取github.com/btcsuite/btcutil</h5>
 <h5>新建config.go文件:</h5>
 
