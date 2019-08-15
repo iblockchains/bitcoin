@@ -99,7 +99,7 @@ sage containing its own IP address to its neighbors. The neighbors will, in turn
     <li><h5></h5></li>
   </ul>
 </h5>
-1.配置 config.go
+
 2.日志 log.go
 3.打断信号
 4.打印版本
