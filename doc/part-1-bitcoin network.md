@@ -93,7 +93,7 @@ sage containing its own IP address to its neighbors. The neighbors will, in turn
 <h5>
   <ul>
     <li><h5><a href="#配置">配置</a></h5></li>
-    <li><h5></h5></li>
+    <li><h5><span id="jump">Hello World</span></h5></li>
     <li><h5></h5></li>
     <li><h5></h5></li>
     <li><h5></h5></li>
@@ -364,8 +364,8 @@ func initLogRotator(logFile string) {
 	logRotator = r
 }
 ```
-
-# 配置
+[XXXX](#jump)
+<h4>配置</h4>
 <h5>通过go get 拉取github.com/btcsuite/btcutil</h5>
 <h5>新建config.go文件:</h5>
 
