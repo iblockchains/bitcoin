@@ -35,4 +35,19 @@ type DB interface {
 	// block until all database transactions have been finalized (rolled
 	// back or committed).
 	Close() error
+	// Update invokes the passed function in the context of a managed
+	// read-write transaction.  Any errors returned from the user-supplied
+	// function will cause the transaction to be rolled back and are
+	// returned from this function.  Otherwise, the transaction is committed
+	// when the user-supplied function returns a nil error.
+	//
+	// Calling Rollback or Commit on the transaction passed to the
+	// user-supplied function will result in a panic.
+	Update(fn func(tx Tx) error) error
 }
+
+// Tx 代表数据库事务.
+// represents a database transaction.  It can either by read-only or
+// read-write.  The transaction provides a metadata bucket against which all
+// read and writes occur.
+type Tx interface{}

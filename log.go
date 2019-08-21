@@ -40,6 +40,8 @@ var (
 	logRotator *rotator.Rotator
 	btcdLog    = backendLog.Logger("BTCD") // 客户端日志
 	srvrLog    = backendLog.Logger("SRVR") // 服务器日志
+	indxLog    = backendLog.Logger("INDX") // 索引日志
+	amgrLog    = backendLog.Logger("AMGR") // 地址管理器
 )
 
 // initLogRotator initializes the logging rotater to write logs to logFile and
